@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo"><a href="index.html" style="text-decoration: none; color: #ffcb3f;">My Portfolio</a></div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="quizzes.html">Quizzes</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<section id="projects">
+ <h2 class="section-title">
+  PROJECTS
+ </h2>
+ <div class="card-container">
+  <div class="card">
+   <img alt="Project 1" src="project/blog.jpg"/>
+   <p>
+    Vlog
+   </p>
+  </div>
+  <div class="card">
+   <img alt="Project 2" src="project/Slambook.png"/>
+   <p>
+    SlamBook
+   </p>
+  </div>
+ </div>
+</section>
+<div id="modal" class="modal">
+  <span class="close-btn">&times;</span>
+  <img class="modal-img" src="" alt="Enlarged view">
+  <p class="modal-caption"></p>
+</div>
+
+<footer>
+  <p>&copy; 2025 Jero Amir C. Acquisa | All Rights Reserved.</p>
+  <p>Email: <a href="mailto:sc.jeroamir.acquisa@cvsu.edu.ph">sc.jeroamir.acquisa@cvsu.edu.ph</a> | 
+     <a href="https://www.facebook.com/jhon.acquisa/">Facebook</a> | 
+     <a href="https://github.com/">GitHub</a></p>
+</footer>
+
+<script src="script.js">
+  
+</script>
+<script>const modal = document.getElementById("modal");
+  const modalImg = document.querySelector(".modal-img");
+  const modalCaption = document.querySelector(".modal-caption");
+  const closeBtn = document.querySelector(".close-btn");
+  
+  // Target all cards
+  document.querySelectorAll(".card").forEach(card => {
+    const img = card.querySelector("img");
+    const caption = card.querySelector("p");
+  
+    card.addEventListener("click", () => {
+      modal.style.display = "block";
+      modalImg.src = img.src;
+      modalCaption.textContent = caption.textContent;
+    });
+  });
+  
+  // Close modal
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+  
+  // Close on outside click
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });</script>
+</body>
+</html>
